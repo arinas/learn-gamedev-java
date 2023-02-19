@@ -1,10 +1,28 @@
 package de.learngamedev;
 
-public class Display {
-    int width = 800;
-    int height = 600;
+import javax.swing.*;
+import java.awt.*;
+
+public class Display extends Canvas {
+
+    private static final long serialVersionUID = 1L;
+   public static  final int WIDTH = 800;
+    public static final int HEIGHT = 600;
+
+    public static final String TITLE = "MyFirstGame";
 
     public static void main(String[] args) {
+        Display game = new Display();
+        JFrame frame = new JFrame();
+        frame.add(game);
+        frame.pack();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setSize(WIDTH,HEIGHT);
+        frame.setTitle(TITLE);
+        frame.setResizable(false);
+        frame.setVisible(true);
 
+        System.out.println("Game running...");
     }
 }
